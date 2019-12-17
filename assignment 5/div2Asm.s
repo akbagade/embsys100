@@ -49,13 +49,13 @@ Return value    : R0
 *******************************************************************************/  
   
 div2Asm
-    PUSH {R0,LR}        // save the input argument and return address
-    LDR R0,=myCstr      // load (global) address of address of string into R0
-    LDR R0,[R0]         // load address of string into R0
-    BL  PrintString     // call PrintString to print the string
-    POP {R0,LR}         // Restore R0 and LR
-    MOV R1, #2          // R1 = 2
-    UDIV R0, R0, R1     // unsigned division by value in R1
-    BX LR               // return (with function result in R0)
+    PUSH {R0,LR}       
+    LDR R0,=myCstr     
+    LDR R0,[R0]        
+    BL  PrintString     
+    POP {R0,LR}         
+    MOV R1, #2        
+    UDIV R0, R0, R1     
+    BX LR              
 
     END
